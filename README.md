@@ -9,6 +9,8 @@
 
 ## Production URL
 🔗 https://my-lab8-app-delta.vercel.app/
+## Preview URL
+https://my-lab8-app-emaanfatim-emaanfatims-projects.vercel.app/
 
 ## About This Lab
 This lab covers frontend deployment using Vercel, including:
