@@ -7,10 +7,18 @@ const data: Record<string, object> = {
 
 export async function GET(
   _: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
-  const student = data[params.id];
-  if (!student)
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  const { id } = await context.params;
+
+  const student = data[id];
+
+  if (!student) {
+    return NextResponse.json(
+      { error: "Not found" },
+      { status: 404 }
+    );
+  }
+
   return NextResponse.json(student);
 }
